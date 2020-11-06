@@ -1,24 +1,42 @@
-import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import React from 'react'
+import { View, Text, StyleSheet } from 'react-native'
+import PeopleDetails from '../component/PeopleDetails'
 
-const PeopleDetailsPage = props => {
-    
-    const { name } = props
-    console.log("Nome: " + name)
+class PeopleDetailsPage extends React.Component {
+  constructor(props){
+      super(props)
+      this.state = {
+         "people": props.route.params.people
+      }
+  }
 
+  render(){
     return (
-        <View style={styles.container}>
-        </View>
+      <View style={style.container}>
+          <PeopleDetails people={this.state.people}/>
+      </View>
     )
+  }
 }
 
-const styles = StyleSheet.create({
-      container: {
-        flex: 1,
-        marginTop: 35,
-        padding: 40,
-        justifyContent: 'space-between',
-      },
+const style = StyleSheet.create({
+  container: {
+    marginTop: 35,
+    backgroundColor: '#f1f1f1'
+  },
+  headerStyle: {
+    flex: 1,
+    height: 50,
+    width: '100%',
+    backgroundColor: "#ccc",
+    justifyContent: "center",
+    alignItems: 'center'
+  },
+  textTitle: {
+    color: '#000000',
+    fontSize: 20,
+  }
 })
+
 
 export default PeopleDetailsPage

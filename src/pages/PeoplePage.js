@@ -21,13 +21,13 @@ export default class PeoplePage extends React.Component {
     })
   }
  
-  render(){
+  render() {
     return (
         <View>
             <PeopleList peoples={this.state.peoples}
-                onPressItem={() => {
-                    this.props.navigation.navigate('Detalhe da Pessoa')
-                }} 
+                onPressItem={(people) => {
+                    this.props.navigation.navigate('Detalhe da Pessoa', {"people": people})
+                }}
             /> 
         </View>
     );

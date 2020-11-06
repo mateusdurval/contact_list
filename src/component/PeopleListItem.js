@@ -1,20 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { toUpperFirst } from '../util'
-import PeopleDetailsPage from '../pages/PeopleDetailsPage'
  
 const PeopleListItem = props => {
 
     const { people, onPressItemDetails } = props
-    console.log(people.name)
     const { title, first, last } = people.name
 
     return (
         <TouchableOpacity onPress={() => {
-            onPressItemDetails = () => {
-                <PeopleDetailsPage name={people.name} />
-            }
-            
+            onPressItemDetails(people)
         }}>
         
             <View style={style.line}>
