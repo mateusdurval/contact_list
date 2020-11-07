@@ -1,6 +1,14 @@
+<<<<<<< HEAD
 import React from 'react'
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native'
 import {toUpperFirst} from '../util'
+=======
+import React from 'react';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import { toUpperFirst } from '../util'
+ 
+const PeopleListItem = props => {
+>>>>>>> 1534e5aa2f6d1550ab8c1ec9946a785b47f80eb1
 
 const PeopleListItem = props => {
     const { people, onPressItemDetails } = props
